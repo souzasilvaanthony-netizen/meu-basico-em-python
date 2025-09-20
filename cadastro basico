@@ -1,0 +1,13 @@
+print("olá pessoal")
+
+nome = input("Qual o seu nome? ")
+idade = int(input("Qual a sua idade? "))
+sonho = input("Qual o seu maior sonho? ")
+trabalho = input("qual o seu trabalho?")
+
+print(f"Meu nome é {nome}, tenho {idade} anos de idade, e meu sonho é {sonho} e trabalho como {trabalho}")
+
+if idade >= 18:
+    print("Maior de idade")
+else:
+    print("Menor de idade")
