@@ -1,0 +1,61 @@
+# desenho_casinha.py
+import turtle as t
+
+t.title("Desenho simples em Python - Casinha com Sol")
+t.bgcolor("#EAF6FF")
+t.speed(8)
+
+# Helpers
+def move(x, y):
+    t.penup(); t.goto(x, y); t.pendown()
+
+def retangulo(larg, alt, cor):
+    t.fillcolor(cor); t.begin_fill()
+    for _ in range(2):
+        t.forward(larg); t.left(90)
+        t.forward(alt); t.left(90)
+    t.end_fill()
+
+def triangulo(base, cor):
+    t.fillcolor(cor); t.begin_fill()
+    for _ in range(3):
+        t.forward(base); t.left(120)
+    t.end_fill()
+
+# Gramado
+move(-300, -150)
+t.color("#6CC24A")
+retangulo(600, 80, "#6CC24A")
+
+# Corpo da casa
+move(-80, -150)
+t.color("#B56576")
+retangulo(160, 120, "#B56576")
+
+# Porta
+move(-10, -150)
+t.color("#3D405B")
+retangulo(40, 70, "#3D405B")
+
+# Janela
+move(-65, -90)
+t.color("#81B29A")
+retangulo(40, 30, "#81B29A")
+move(-65, -90); t.color("#264653")
+t.forward(40); move(-45, -90); t.left(90); t.forward(30); t.right(90)
+
+# Telhado
+move(-100, -30); t.color("#E07A5F")
+triangulo(200, "#E07A5F")
+
+# Sol
+move(160, 120); t.color("#F4A261", "#F4A261")
+t.begin_fill(); t.circle(35); t.end_fill()
+t.color("#F4A261")
+for i in range(12):
+    move(160, 155); t.setheading(i * 30)
+    t.forward(50); t.backward(15)
+
+# Final
+t.hideturtle()
+t.done()
