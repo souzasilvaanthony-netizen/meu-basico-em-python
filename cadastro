@@ -1,0 +1,29 @@
+print("=" * 40)
+print("      📝 PÁGINA DE CADASTRO 📝")
+print("=" * 40)
+
+nome = input("\n👤 Nome: ")
+
+# Loop para garantir que a idade seja um número
+while True:
+    try:
+        idade = int(input("🎂 Idade: "))
+        break
+    except ValueError:
+        print("⚠️ Digite apenas números para a idade!")
+
+profissao = input("💼 Profissão: ")
+sonho = input("🌟 Seu maior sonho: ")
+
+print("\n" + "=" * 40)
+print("✅ CADASTRO CONCLUÍDO COM SUCESSO ✅")
+print("=" * 40)
+
+print(f"""
+📋 Aqui estão os seus dados:
+
+👤 Nome: {nome}
+🎂 Idade: {idade}
+💼 Profissão: {profissao}
+🌟 Maior sonho: {sonho}
+""")
